@@ -14,12 +14,12 @@ import androidx.recyclerview.widget.SnapHelper
 import com.cncoderx.wheelview.OnWheelChangedListener
 import com.roy.R
 import com.roy.adt.WeightPickerAdapter
-import com.roy.databinding.ActivityMainBinding
+import com.roy.databinding.AMainBinding
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: AMainBinding
     private val _binding get() = binding
 
     private lateinit var weightAdapter: WeightPickerAdapter
@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.a_main)
 
         animationView()
         setupViews()
@@ -90,10 +90,11 @@ class MainActivity : AppCompatActivity() {
         }
 
 //        Height
-        _binding.heightWheelView.onWheelChangedListener = OnWheelChangedListener { view, _, newIndex ->
-            val text = view.getItem(newIndex)
-            height = Integer.parseInt(text.toString())
-        }
+        _binding.heightWheelView.onWheelChangedListener =
+            OnWheelChangedListener { view, _, newIndex ->
+                val text = view.getItem(newIndex)
+                height = Integer.parseInt(text.toString())
+            }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             _binding.heightWheelView.apply {
@@ -163,7 +164,8 @@ class MainActivity : AppCompatActivity() {
                 .start()
             footerContainer.animate().translationY(-250f).alpha(0f).setDuration(500)
                 .setStartDelay(50).start()
-            heightWheelView.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(100)
+            heightWheelView.animate().translationY(-250f).alpha(0f).setDuration(500)
+                .setStartDelay(100)
                 .start()
             weightRecyclerBtn.animate().translationX(-250f).alpha(0f).setDuration(500)
                 .setStartDelay(150).start()

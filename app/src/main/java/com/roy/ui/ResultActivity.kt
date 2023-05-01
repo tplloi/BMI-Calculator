@@ -1,6 +1,5 @@
 package com.roy.ui
 
-
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -19,7 +18,6 @@ import dev.jahidhasanco.bmicalculator.R
 import dev.jahidhasanco.bmicalculator.databinding.ActivityResultBinding
 import com.roy.utils.displayToast
 import com.roy.utils.saveBitmap
-
 
 class ResultActivity : AppCompatActivity() {
 

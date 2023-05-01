@@ -12,11 +12,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.cncoderx.wheelview.OnWheelChangedListener
+import com.roy.adt.WeightPickerAdapter
 import dev.jahidhasanco.bmicalculator.R
 import dev.jahidhasanco.bmicalculator.databinding.ActivityMainBinding
-import com.roy.adt.WeightPickerAdapter
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +34,11 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         animationView()
-//        Gender
+        setupViews()
+    }
+
+    private fun setupViews() {
+        //        Gender
         val titlesOfGender: List<String> = listOf("F", "O", "M")
 
         _binding.genderWheelView.apply {
@@ -81,22 +84,16 @@ class MainActivity : AppCompatActivity() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 isFocusedByDefault = true
             }
-
-
         }
-
-
         pickerLayoutManager.setOnScrollStopListener { view ->
             weight = Integer.parseInt((view as TextView).text.toString())
         }
 
-
 //        Height
-        _binding.heightWheel.onWheelChangedListener =
-            OnWheelChangedListener { view, _, newIndex ->
-                val text = view.getItem(newIndex)
-                height = Integer.parseInt(text.toString())
-            }
+        _binding.heightWheel.onWheelChangedListener = OnWheelChangedListener { view, _, newIndex ->
+            val text = view.getItem(newIndex)
+            height = Integer.parseInt(text.toString())
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             _binding.heightWheel.apply {
@@ -104,7 +101,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-
 
         _binding.startButton.setOnActiveListener {
             animationViewUp()
@@ -149,8 +145,6 @@ class MainActivity : AppCompatActivity() {
             heightWheel.alpha = 0f
             weightRecyclerBtn.alpha = 0f
 
-
-
             bodyContainer.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(300)
                 .start()
             footerContainer.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(400)
@@ -164,9 +158,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun animationViewUp() {
-
         _binding.apply {
-
             textView.animate().translationY(0f).alpha(0f).setDuration(50).setStartDelay(0).start()
             bodyContainer.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(0)
                 .start()
@@ -190,5 +182,4 @@ class MainActivity : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
     }
-
 }

@@ -1,5 +1,4 @@
-package dev.jahidhasanco.bmicalculator.presentation.adapter
-
+package com.roy.adt
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,10 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import dev.jahidhasanco.bmicalculator.R
 
-
-class WeightPickerAdapter(private val context: Context, private var dataList: List<String>, private val recyclerView: RecyclerView) :
+class WeightPickerAdapter(
+    private val context: Context,
+    private var dataList: List<String>,
+    private val recyclerView: RecyclerView
+) :
     RecyclerView.Adapter<WeightPickerAdapter.TextVH>() {
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextVH {
@@ -41,7 +42,7 @@ class WeightPickerAdapter(private val context: Context, private var dataList: Li
         this.notifyDataSetChanged()
     }
 
-     class TextVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class TextVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var pickerTxt: TextView
 
         init {

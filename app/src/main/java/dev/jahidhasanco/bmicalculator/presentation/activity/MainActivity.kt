@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.SnapHelper
 import com.cncoderx.wheelview.OnWheelChangedListener
 import dev.jahidhasanco.bmicalculator.R
 import dev.jahidhasanco.bmicalculator.databinding.ActivityMainBinding
-import dev.jahidhasanco.bmicalculator.presentation.adapter.WeightPickerAdapter
+import com.roy.adt.WeightPickerAdapter
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
 

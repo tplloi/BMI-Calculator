@@ -90,15 +90,14 @@ class MainActivity : AppCompatActivity() {
         }
 
 //        Height
-        _binding.heightWheel.onWheelChangedListener = OnWheelChangedListener { view, _, newIndex ->
+        _binding.heightWheelView.onWheelChangedListener = OnWheelChangedListener { view, _, newIndex ->
             val text = view.getItem(newIndex)
             height = Integer.parseInt(text.toString())
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            _binding.heightWheel.apply {
+            _binding.heightWheelView.apply {
                 defaultFocusHighlightEnabled = true
-
             }
         }
 
@@ -136,20 +135,20 @@ class MainActivity : AppCompatActivity() {
 
             bodyContainer.translationY = 150f
             footerContainer.translationY = 150f
-            heightWheel.translationY = 150f
+            heightWheelView.translationY = 150f
             weightRecyclerBtn.translationX = 150f
 
 
             bodyContainer.alpha = 0f
             footerContainer.alpha = 0f
-            heightWheel.alpha = 0f
+            heightWheelView.alpha = 0f
             weightRecyclerBtn.alpha = 0f
 
             bodyContainer.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(300)
                 .start()
             footerContainer.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(400)
                 .start()
-            heightWheel.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(450)
+            heightWheelView.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(450)
                 .start()
             weightRecyclerBtn.animate().translationX(0f).alpha(1f).setDuration(500)
                 .setStartDelay(500).start()
@@ -164,7 +163,7 @@ class MainActivity : AppCompatActivity() {
                 .start()
             footerContainer.animate().translationY(-250f).alpha(0f).setDuration(500)
                 .setStartDelay(50).start()
-            heightWheel.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(100)
+            heightWheelView.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(100)
                 .start()
             weightRecyclerBtn.animate().translationX(-250f).alpha(0f).setDuration(500)
                 .setStartDelay(150).start()

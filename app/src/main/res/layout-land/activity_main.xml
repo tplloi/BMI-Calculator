@@ -3,9 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
+    <data></data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -29,8 +27,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!--    main container    -->
         <LinearLayout
             android:id="@+id/bodyContainer"
             android:layout_width="match_parent"
@@ -40,7 +36,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView">
 
-            <!--            gender and weight container-->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -55,7 +50,8 @@
                     android:layout_weight="1"
                     android:background="@drawable/rounded_dash_main2"
                     android:elevation="25dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    tools:ignore="NestedWeights">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -66,7 +62,7 @@
                         android:textSize="16sp" />
 
                     <me.sujanpoudel.wheelview.WheelView
-                        android:id="@+id/gender_wheel_view"
+                        android:id="@+id/genderWheelView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -84,14 +80,9 @@
                         app:wheelSelectedTextColor="@color/white"
                         app:wheelStartAngle="315"
                         app:wheelTextColor="@color/textColorInWheel"
-                        app:wheelTextSize="14sp"
-
-                        />
+                        app:wheelTextSize="14sp" />
 
                 </LinearLayout>
-
-
-                <!--            Weight Container        />-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -136,7 +127,6 @@
                         android:background="@drawable/rounded_dash"
                         android:orientation="vertical">
 
-
                         <androidx.recyclerview.widget.RecyclerView
                             android:id="@+id/weightRecyclerBtn"
                             android:layout_width="match_parent"
@@ -157,6 +147,7 @@
                             android:layout_width="18dp"
                             android:layout_height="11dp"
                             android:layout_gravity="center"
+                            android:contentDescription="@string/app_name"
                             android:scaleType="fitXY"
                             android:src="@drawable/ic_triangle"
                             app:layout_constraintBottom_toBottomOf="parent"
@@ -166,12 +157,8 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
-
-
             </LinearLayout>
 
-
-            <!--            Height Container-->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -212,7 +199,7 @@
                 </LinearLayout>
 
                 <com.cncoderx.wheelview.WheelView
-                    android:id="@+id/height_wheel"
+                    android:id="@+id/heightWheelView"
                     android:layout_width="match_parent"
                     android:layout_height="165dp"
                     android:layout_marginTop="10dp"
@@ -228,7 +215,6 @@
                     app:wheelTextColor="@color/textColor"
                     app:wheelTextSize="15sp" />
 
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/footerContainer"
                     android:layout_width="match_parent"
@@ -236,7 +222,7 @@
                     android:layout_margin="1dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/height_wheel">
+                    app:layout_constraintTop_toBottomOf="@+id/heightWheelView">
 
                     <com.example.swipebutton_library.SwipeButton
                         android:id="@+id/start_button"

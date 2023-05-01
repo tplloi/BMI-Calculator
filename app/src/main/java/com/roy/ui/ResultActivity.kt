@@ -14,10 +14,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.drawToBitmap
 import androidx.core.view.setPadding
 import androidx.databinding.DataBindingUtil
-import dev.jahidhasanco.bmicalculator.R
-import dev.jahidhasanco.bmicalculator.databinding.ActivityResultBinding
 import com.roy.utils.displayToast
 import com.roy.utils.saveBitmap
+import dev.jahidhasanco.bmicalculator.R
+import dev.jahidhasanco.bmicalculator.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
 
@@ -39,33 +39,34 @@ class ResultActivity : AppCompatActivity() {
         displayToast("Please allow External Storage Read and Write Permissions.")
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_result)
 
+        setupViews()
+    }
+
+    private fun setupViews() {
         weight = intent.getDoubleExtra("Weight", 50.0)
         height = intent.getDoubleExtra("Height", 1.0)
         gender = intent.getIntExtra("Gender", 0)
 
         bmiCal()
         animationView()
+
         _binding.reloadBtn.setOnClickListener {
 
             backPreviousPage()
 
         }
-
         _binding.deleteBtn.setOnClickListener {
 
             backPreviousPage()
 
         }
-
         _binding.shareBtn.setOnClickListener {
             shareImage()
         }
-
     }
 
     private fun shareImage() {
@@ -213,10 +214,8 @@ class ResultActivity : AppCompatActivity() {
         result = ((weight / (height * height)) * 10000)
     }
 
-    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         backPreviousPage()
     }
-
 
 }

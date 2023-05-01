@@ -13,6 +13,7 @@ import com.google.android.material.color.DynamicColors
 //TODO firebase
 //TODO keystore
 //TODO leak canary
+//TODO keep value cuoi cung de hien thi len wheel view
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

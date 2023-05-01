@@ -54,17 +54,13 @@ class ResultActivity : AppCompatActivity() {
         bmiCal()
         animationView()
 
-        _binding.reloadBtn.setOnClickListener {
-
+        _binding.cvReload.setOnClickListener {
             backPreviousPage()
-
         }
-        _binding.deleteBtn.setOnClickListener {
-
+        _binding.ivDeleteBtn.setOnClickListener {
             backPreviousPage()
-
         }
-        _binding.shareBtn.setOnClickListener {
+        _binding.ivShare.setOnClickListener {
             shareImage()
         }
     }
@@ -76,7 +72,7 @@ class ResultActivity : AppCompatActivity() {
         }
 
         // unHide the app logo and name
-        val imageURI = _binding.detailView.drawToBitmap().let { bitmap ->
+        val imageURI = _binding.llDetailView.drawToBitmap().let { bitmap ->
             saveBitmap(this, bitmap)
         } ?: run {
             displayToast("Error occurred!")
@@ -109,40 +105,38 @@ class ResultActivity : AppCompatActivity() {
 
         _binding.apply {
 
-            deskImage.translationY = 100f
-            resultText.translationY = 40f
-            bmiText.translationY = 50f
-            bmiTextNormal.translationY = 50f
-            deleteBtn.translationY = 70f
-            reloadCardView.translationY = 70f
-            shareBtn.translationY = 70f
+            ivDesk.translationY = 100f
+            tvResult.translationY = 40f
+            tvBmi.translationY = 50f
+            tvBmiTextNormal.translationY = 50f
+            ivDeleteBtn.translationY = 70f
+            cvReload.translationY = 70f
+            ivShare.translationY = 70f
 
-            deskImage.alpha = 0f
-            resultText.alpha = 0f
-            bmiText.alpha = 0f
-            bmiTextNormal.alpha = 0f
-            deleteBtn.alpha = 0f
-            reloadCardView.alpha = 0f
-            shareBtn.alpha = 0f
+            ivDesk.alpha = 0f
+            tvResult.alpha = 0f
+            tvBmi.alpha = 0f
+            tvBmiTextNormal.alpha = 0f
+            ivDeleteBtn.alpha = 0f
+            cvReload.alpha = 0f
+            ivShare.alpha = 0f
 
-            deskImage.setPadding(100)
-
-            deskImage.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(300)
+            ivDesk.setPadding(100)
+            ivDesk.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(300)
                 .start()
-            deskImage.setPadding(0)
-            resultText.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(500)
+            ivDesk.setPadding(0)
+            tvResult.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(500)
                 .start()
-            bmiText.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(450).start()
-            bmiTextNormal.animate().translationY(0f).alpha(.3f).setDuration(500).setStartDelay(500)
+            tvBmi.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(450).start()
+            tvBmiTextNormal.animate().translationY(0f).alpha(.3f).setDuration(500)
+                .setStartDelay(500)
                 .start()
-            deleteBtn.animate().translationY(0f).alpha(.3f).setDuration(500).setStartDelay(600)
+            ivDeleteBtn.animate().translationY(0f).alpha(.3f).setDuration(500).setStartDelay(600)
                 .start()
-            reloadCardView.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(750)
+            cvReload.animate().translationY(0f).alpha(1f).setDuration(500).setStartDelay(750)
                 .start()
-            shareBtn.animate().translationY(0f).alpha(.3f).setDuration(500).setStartDelay(900)
+            ivShare.animate().translationY(0f).alpha(.3f).setDuration(500).setStartDelay(900)
                 .start()
-
-
         }
     }
 
@@ -152,24 +146,22 @@ class ResultActivity : AppCompatActivity() {
 
             textView.animate().translationY(0f).alpha(0f).setDuration(500).setStartDelay(0)
                 .start()
-            deskImage.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(0)
+            ivDesk.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(0)
                 .start()
 
-            resultText.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(50)
+            tvResult.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(50)
                 .start()
-            bmiText.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(100)
+            tvBmi.animate().translationY(-250f).alpha(0f).setDuration(500).setStartDelay(100)
                 .start()
-            bmiTextNormal.animate().translationY(-250f).alpha(0f).setDuration(500)
+            tvBmiTextNormal.animate().translationY(-250f).alpha(0f).setDuration(500)
                 .setStartDelay(150)
                 .start()
-            deleteBtn.animate().translationY(-250f).alpha(0f).setDuration(300).setStartDelay(200)
+            ivDeleteBtn.animate().translationY(-250f).alpha(0f).setDuration(300).setStartDelay(200)
                 .start()
-            reloadCardView.animate().translationY(-250f).alpha(0f).setDuration(300)
+            cvReload.animate().translationY(-250f).alpha(0f).setDuration(300)
                 .setStartDelay(250).start()
-            shareBtn.animate().translationY(-250f).alpha(0f).setDuration(300).setStartDelay(300)
+            ivShare.animate().translationY(-250f).alpha(0f).setDuration(300).setStartDelay(300)
                 .start()
-
-
         }
     }
 
@@ -190,8 +182,8 @@ class ResultActivity : AppCompatActivity() {
     private fun showResult() {
 
         val solution = String.format("%.1f", result)
-        _binding.resultText.text = solution
-        _binding.bmiText.apply {
+        _binding.tvResult.text = solution
+        _binding.tvBmi.apply {
             if (result < 18.5) {
                 this.text = "You are Under Weight"
             } else if (result >= 18.5 && result < 24.9) {

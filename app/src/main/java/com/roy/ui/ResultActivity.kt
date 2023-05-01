@@ -15,13 +15,13 @@ import androidx.core.view.drawToBitmap
 import androidx.core.view.setPadding
 import androidx.databinding.DataBindingUtil
 import com.roy.R
-import com.roy.databinding.ActivityResultBinding
+import com.roy.databinding.AResultBinding
 import com.roy.utils.displayToast
 import com.roy.utils.saveBitmap
 
 class ResultActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityResultBinding
+    private lateinit var binding: AResultBinding
     private val _binding get() = binding
 
     private var weight: Double = 1.0
@@ -41,7 +41,7 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_result)
+        binding = DataBindingUtil.setContentView(this, R.layout.a_result)
 
         setupViews()
     }

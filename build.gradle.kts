@@ -1,5 +1,3 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
-
 plugins {
     id("com.android.application") version "8.0.0" apply false
     id("com.android.library") version "8.0.0" apply false
@@ -8,13 +6,13 @@ plugins {
 }
 
 sonarqube {
-  properties {
-    property("sonar.projectKey", "JahidHasanCO_BMI-Calculator")
-    property("sonar.organization", "jahidhasanco")
-    property("sonar.host.url", "https://sonarcloud.io")
-  }
+    properties {
+        property("sonar.projectKey", "JahidHasanCO_BMI-Calculator")
+        property("sonar.organization", "jahidhasanco")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
-tasks.register("clean",Delete::class){
+tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }

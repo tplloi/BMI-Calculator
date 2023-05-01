@@ -1,4 +1,4 @@
-package dev.jahidhasanco.bmicalculator.utils
+package com.roy.utils
 
 import android.app.Activity
 import android.content.ContentValues

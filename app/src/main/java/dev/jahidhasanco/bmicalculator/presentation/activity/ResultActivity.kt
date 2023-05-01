@@ -17,8 +17,8 @@ import androidx.core.view.setPadding
 import androidx.databinding.DataBindingUtil
 import dev.jahidhasanco.bmicalculator.R
 import dev.jahidhasanco.bmicalculator.databinding.ActivityResultBinding
-import dev.jahidhasanco.bmicalculator.utils.displayToast
-import dev.jahidhasanco.bmicalculator.utils.saveBitmap
+import com.roy.utils.displayToast
+import com.roy.utils.saveBitmap
 
 
 class ResultActivity : AppCompatActivity() {

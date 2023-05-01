@@ -12,6 +12,7 @@ import com.google.android.material.color.DynamicColors
 //TODO ad id manifest
 //TODO firebase
 //TODO keystore
+//TODO leak canary
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

@@ -20,10 +20,10 @@
         android:theme="@style/AppTheme"
         tools:targetApi="33">
         <activity
-            android:name=".presentation.activity.ResultActivity"
+            android:name="com.roy.ui.ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.activity.MainActivity"
+            android:name="com.roy.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

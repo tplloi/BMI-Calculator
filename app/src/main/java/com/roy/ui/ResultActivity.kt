@@ -1,4 +1,4 @@
-package dev.jahidhasanco.bmicalculator.presentation.activity
+package com.roy.ui
 
 
 import android.Manifest

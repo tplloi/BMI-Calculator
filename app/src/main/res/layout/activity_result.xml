@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundColorAdditional"
-        tools:context=".presentation.activity.ResultActivity">
+        tools:context="com.roy.ui.ResultActivity">
 
         <ScrollView
             android:layout_width="match_parent"

@@ -14,10 +14,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.drawToBitmap
 import androidx.core.view.setPadding
 import androidx.databinding.DataBindingUtil
+import com.roy.R
+import com.roy.databinding.ActivityResultBinding
 import com.roy.utils.displayToast
 import com.roy.utils.saveBitmap
-import dev.jahidhasanco.bmicalculator.R
-import dev.jahidhasanco.bmicalculator.databinding.ActivityResultBinding
 
 class ResultActivity : AppCompatActivity() {
 

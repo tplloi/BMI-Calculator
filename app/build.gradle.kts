@@ -36,7 +36,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    namespace = "dev.jahidhasanco.bmicalculator"
+    namespace = "com.roy"
     android.buildFeatures.dataBinding = true
 
 }

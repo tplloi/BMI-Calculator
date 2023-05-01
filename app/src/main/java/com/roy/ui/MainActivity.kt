@@ -12,9 +12,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.cncoderx.wheelview.OnWheelChangedListener
+import com.roy.R
 import com.roy.adt.WeightPickerAdapter
-import dev.jahidhasanco.bmicalculator.R
-import dev.jahidhasanco.bmicalculator.databinding.ActivityMainBinding
+import com.roy.databinding.ActivityMainBinding
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
 class MainActivity : AppCompatActivity() {

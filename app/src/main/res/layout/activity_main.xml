@@ -20,8 +20,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-           >
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -32,7 +31,6 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:fontFamily="@font/larsseit_bold"
                     android:gravity="center_vertical"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
@@ -93,7 +91,6 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
-                                android:fontFamily="@font/larsseit_medium"
                                 android:gravity="center"
                                 android:text="GENDER"
                                 android:textColor="@color/textColor"
@@ -144,7 +141,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:fontFamily="@font/larsseit_medium"
                                     android:gravity="bottom"
                                     android:text="WEIGHT"
                                     android:textColor="@color/textColor"
@@ -153,7 +149,6 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:fontFamily="@font/larsseit_medium"
                                     android:gravity="bottom"
                                     android:paddingBottom="3.4dp"
                                     android:text="(KG)"
@@ -231,7 +226,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:fontFamily="@font/larsseit_medium"
                                 android:gravity="bottom"
                                 android:text="HEIGHT"
                                 android:textColor="@color/textColor"
@@ -240,7 +234,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:fontFamily="@font/larsseit_medium"
                                 android:gravity="bottom"
                                 android:paddingBottom="3.4dp"
                                 android:text="(CM)"

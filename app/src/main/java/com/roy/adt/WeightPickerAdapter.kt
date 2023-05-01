@@ -20,7 +20,7 @@ class WeightPickerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextVH {
         val view: View
         val inflater = LayoutInflater.from(context)
-        view = inflater.inflate(R.layout.weight_picker_item_layout, parent, false)
+        view = inflater.inflate(R.layout.v_weight_picker, parent, false)
         return TextVH(view)
     }
 

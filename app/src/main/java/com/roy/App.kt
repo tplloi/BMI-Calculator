@@ -4,8 +4,8 @@ import android.app.Application
 import com.google.android.material.color.DynamicColors
 
 //TODO ad
-//TODO ad id manifest
 //TODO firebase
+
 //TODO keystore
 //TODO leak canary
 //TODO keep value cuoi cung de hien thi len wheel view
@@ -16,6 +16,7 @@ import com.google.android.material.color.DynamicColors
 //more app
 //share app
 //policy
+//ad id manifest
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

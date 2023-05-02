@@ -5,8 +5,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -106,6 +104,7 @@ class MainActivity : AppCompatActivity() {
                 defaultFocusHighlightEnabled = true
             }
         }
+        _binding.heightWheelView.currentIndex = 159//160cm
 
         _binding.startButton.setOnActiveListener {
             animationViewUp()

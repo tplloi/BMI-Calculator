@@ -5,9 +5,12 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.PopupMenu
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
@@ -16,6 +19,7 @@ import com.roy.R
 import com.roy.adt.WeightPickerAdapter
 import com.roy.databinding.AMainBinding
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -124,7 +128,7 @@ class MainActivity : AppCompatActivity() {
             onBackPressed()
         }
         _binding.ivMenu.setOnClickListener {
-
+            showMenu()
         }
     }
 
@@ -188,5 +192,32 @@ class MainActivity : AppCompatActivity() {
         Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show()
 
         Handler(Looper.getMainLooper()).postDelayed({ doubleBackToExitPressedOnce = false }, 2000)
+    }
+
+    private fun showMenu() {
+        val pm = PopupMenu(this, _binding.ivMenu)
+        pm.menuInflater.inflate(R.menu.option_menu, pm.menu)
+        pm.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menuRateApp -> {
+                    true
+                }
+
+                R.id.menuMoreApp -> {
+                    true
+                }
+
+                R.id.menuShareApp -> {
+                    true
+                }
+
+                R.id.menuPolicy -> {
+                    true
+                }
+
+                else -> super.onOptionsItemSelected(item)
+            }
+        }
+        pm.show()
     }
 }

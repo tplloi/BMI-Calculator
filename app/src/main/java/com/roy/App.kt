@@ -5,9 +5,9 @@ import com.google.android.material.color.DynamicColors
 
 //TODO ad
 //TODO firebase
+//TODO keep value cuoi cung de hien thi len wheel view
 
 //TODO keystore
-//TODO keep value cuoi cung de hien thi len wheel view
 
 //done
 //ic launcher

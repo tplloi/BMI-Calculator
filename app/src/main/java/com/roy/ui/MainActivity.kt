@@ -24,7 +24,6 @@ import com.roy.ext.rateApp
 import com.roy.ext.shareApp
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
-
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: AMainBinding
@@ -61,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         _binding.genderWheelView.selectListener = {
             gender = titlesOfGender[it][0]
         }
-
 
 //        Weight
         val pickerLayoutManager = PickerLayoutManager(this, PickerLayoutManager.HORIZONTAL, false)

@@ -18,6 +18,10 @@ import com.cncoderx.wheelview.OnWheelChangedListener
 import com.roy.R
 import com.roy.adt.WeightPickerAdapter
 import com.roy.databinding.AMainBinding
+import com.roy.ext.moreApp
+import com.roy.ext.openBrowserPolicy
+import com.roy.ext.rateApp
+import com.roy.ext.shareApp
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
 
@@ -200,18 +204,22 @@ class MainActivity : AppCompatActivity() {
         pm.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.menuRateApp -> {
+                    rateApp(packageName)
                     true
                 }
 
                 R.id.menuMoreApp -> {
+                    moreApp()
                     true
                 }
 
                 R.id.menuShareApp -> {
+                    shareApp()
                     true
                 }
 
                 R.id.menuPolicy -> {
+                    openBrowserPolicy()
                     true
                 }
 

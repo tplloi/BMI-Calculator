@@ -7,8 +7,6 @@ import com.google.android.material.color.DynamicColors
 //TODO firebase
 //TODO keep value cuoi cung de hien thi len wheel view
 
-//TODO keystore
-
 //done
 //ic launcher
 //rate app
@@ -17,6 +15,7 @@ import com.google.android.material.color.DynamicColors
 //policy
 //ad id manifest
 //leak canary
+//keystore
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

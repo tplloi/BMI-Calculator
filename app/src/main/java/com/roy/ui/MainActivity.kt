@@ -119,8 +119,14 @@ class MainActivity : AppCompatActivity() {
 
             }, 500)
         }
-    }
 
+        _binding.ivBack.setOnClickListener {
+            onBackPressed()
+        }
+        _binding.ivMenu.setOnClickListener {
+
+        }
+    }
 
     private fun getData(count: Int): List<String> {
         val data: MutableList<String> = ArrayList()

@@ -11,19 +11,42 @@
         android:background="@color/backgroundColorAdditional"
         tools:context="com.roy.ui.MainActivity">
 
-        <TextView
-            android:id="@+id/textView"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llActionBar"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="@string/app_name"
-            android:textColor="@color/textColor"
-            android:textSize="22sp"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivBack"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="16dp"
+                android:src="@drawable/baseline_arrow_back_ios_new_24"
+                app:tint="@color/textColor" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/textColor"
+                android:textSize="22sp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMenu"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="16dp"
+                android:src="@drawable/baseline_menu_24"
+                app:tint="@color/textColor" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <ScrollView
             android:id="@+id/scrollView2"
@@ -32,12 +55,12 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
+            app:layout_constraintTop_toBottomOf="@+id/llActionBar">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <LinearLayout
                     android:id="@+id/bodyContainer"
@@ -48,7 +71,8 @@
                     android:paddingBottom="50dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView">
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    tools:ignore="NotSibling">
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -159,8 +183,8 @@
                                     android:id="@+id/imageView"
                                     android:layout_width="18dp"
                                     android:layout_height="11dp"
-                                    android:contentDescription="@string/app_name"
                                     android:layout_gravity="center"
+                                    android:contentDescription="@string/app_name"
                                     android:scaleType="fitXY"
                                     android:src="@drawable/ic_triangle"
                                     app:layout_constraintBottom_toBottomOf="parent"

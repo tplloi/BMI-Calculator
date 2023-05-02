@@ -78,7 +78,6 @@ class MainActivity : AppCompatActivity() {
 
         weightAdapter = WeightPickerAdapter(this, getData(151), _binding.weightRecyclerBtn)
 
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             _binding.weightRecyclerBtn.defaultFocusHighlightEnabled = true
         }

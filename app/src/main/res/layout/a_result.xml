@@ -12,18 +12,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundColorAdditional"
+        android:orientation="vertical"
         tools:context="com.roy.ui.ResultActivity">
 
         <ScrollView
             android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_gravity="center"
-            android:layout_height="match_parent"
+            android:layout_weight="1"
             tools:ignore="UselessParent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                 <TextView
                     android:id="@+id/textView"
@@ -111,12 +113,12 @@
 
                     <ImageView
                         android:id="@+id/ivDeleteBtn"
-                        android:contentDescription="@string/app_name"
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_marginStart="20dp"
                         android:layout_marginEnd="10dp"
                         android:alpha=".3"
+                        android:contentDescription="@string/app_name"
                         android:padding="13dp"
                         android:src="@drawable/ic_delete" />
 
@@ -132,11 +134,11 @@
 
                         <ImageView
                             android:id="@+id/ivReload"
-                            android:contentDescription="@string/app_name"
                             android:layout_width="55dp"
                             android:layout_height="55dp"
                             android:layout_gravity="center"
                             android:layout_marginTop="1dp"
+                            android:contentDescription="@string/app_name"
                             android:padding="13dp"
                             android:src="@drawable/ic_rotate" />
 
@@ -144,16 +146,22 @@
 
                     <ImageView
                         android:id="@+id/ivShare"
-                        android:contentDescription="@string/app_name"
                         android:layout_width="55dp"
                         android:layout_height="55dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="20dp"
                         android:alpha=".3"
+                        android:contentDescription="@string/app_name"
                         android:padding="13dp"
                         android:src="@drawable/ic_share" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+        <FrameLayout
+            android:id="@+id/flAd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
     </LinearLayout>
 </layout>

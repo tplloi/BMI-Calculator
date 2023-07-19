@@ -42,8 +42,8 @@ android {
             resValue("string", "BANNER", "61bbe6bab3d68d82")
             resValue("string", "INTER", "4396aa8739048c28")
 
-            resValue("string", "EnableAdInter", "false")
-            resValue("string", "EnableAdBanner", "false")
+            resValue("string", "EnableAdInter", "true")
+            resValue("string", "EnableAdBanner", "true")
         }
         create("production") {
             setDimension("type")

@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -14,8 +15,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.drawToBitmap
 import androidx.core.view.setPadding
 import androidx.databinding.DataBindingUtil
+import com.applovin.mediation.ads.MaxAdView
 import com.roy.R
 import com.roy.databinding.AResultBinding
+import com.roy.ext.createAdBanner
 import com.roy.utils.displayToast
 import com.roy.utils.saveBitmap
 
@@ -23,7 +26,7 @@ class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: AResultBinding
     private val _binding get() = binding
-
+    private var adView: MaxAdView? = null
     private var weight: Double = 1.0
     private var height: Double = 1.0
     private var result: Double = 0.0
@@ -63,6 +66,13 @@ class ResultActivity : AppCompatActivity() {
         _binding.ivShare.setOnClickListener {
             shareImage()
         }
+
+        adView = this@ResultActivity.createAdBanner(
+            logTag = javaClass.simpleName,
+            bkgColor = Color.TRANSPARENT,
+            viewGroup = binding.flAd,
+            isAdaptiveBanner = true,
+        )
     }
 
     private fun shareImage() {
@@ -165,7 +175,6 @@ class ResultActivity : AppCompatActivity() {
         }
     }
 
-
     private fun bmiCal() {
         if (height > 0 && weight > 0) {
             if (gender == 0) {
@@ -208,6 +217,11 @@ class ResultActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         backPreviousPage()
+    }
+
+    override fun onDestroy() {
+        adView?.destroy()
+        super.onDestroy()
     }
 
 }

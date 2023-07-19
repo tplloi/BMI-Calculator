@@ -1,6 +1,7 @@
 package com.roy.ui
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -12,10 +13,12 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
+import com.applovin.mediation.ads.MaxAdView
 import com.cncoderx.wheelview.OnWheelChangedListener
 import com.roy.R
 import com.roy.adt.WeightPickerAdapter
 import com.roy.databinding.AMainBinding
+import com.roy.ext.createAdBanner
 import com.roy.ext.moreApp
 import com.roy.ext.openBrowserPolicy
 import com.roy.ext.rateApp
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private var weight = 50
 
     private var doubleBackToExitPressedOnce = false
+    private var adView: MaxAdView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +47,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+        adView = this@MainActivity.createAdBanner(
+            logTag = javaClass.simpleName,
+            bkgColor = Color.TRANSPARENT,
+            viewGroup = binding.flAd,
+            isAdaptiveBanner = true,
+        )
+
         //        Gender
         val titlesOfGender: List<String> = listOf("F", "O", "M")
 
@@ -223,5 +234,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
         pm.show()
+    }
+
+    override fun onDestroy() {
+        adView?.destroy()
+        super.onDestroy()
     }
 }

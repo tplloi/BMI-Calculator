@@ -3,7 +3,6 @@ package com.roy
 import android.app.Application
 import com.google.android.material.color.DynamicColors
 
-//TODO ad
 //TODO firebase
 //TODO keep value cuoi cung de hien thi len wheel view
 
@@ -16,6 +15,7 @@ import com.google.android.material.color.DynamicColors
 //ad id manifest
 //leak canary
 //keystore
+//applovin ad
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

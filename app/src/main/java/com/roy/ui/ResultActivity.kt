@@ -15,18 +15,27 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.drawToBitmap
 import androidx.core.view.setPadding
 import androidx.databinding.DataBindingUtil
+import com.applovin.mediation.MaxAd
+import com.applovin.mediation.MaxAdListener
+import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
+import com.applovin.mediation.ads.MaxInterstitialAd
 import com.roy.R
 import com.roy.databinding.AResultBinding
 import com.roy.ext.createAdBanner
 import com.roy.utils.displayToast
 import com.roy.utils.saveBitmap
+import java.util.concurrent.TimeUnit
+import kotlin.math.min
+import kotlin.math.pow
 
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: AResultBinding
     private val _binding get() = binding
     private var adView: MaxAdView? = null
+    private var interstitialAd: MaxInterstitialAd? = null
+    private var retryAttempt = 0
     private var weight: Double = 1.0
     private var height: Double = 1.0
     private var result: Double = 0.0
@@ -50,6 +59,8 @@ class ResultActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
+        createAdInter()
+
         weight = intent.getDoubleExtra("Weight", 50.0)
         height = intent.getDoubleExtra("Height", 1.0)
         gender = intent.getIntExtra("Gender", 0)
@@ -107,8 +118,8 @@ class ResultActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
+            showAd {}
         }, 600)
-
     }
 
     private fun animationView() {
@@ -204,7 +215,6 @@ class ResultActivity : AppCompatActivity() {
             }
         }
 
-
     }
 
     private fun bmiCalMale() {
@@ -222,6 +232,73 @@ class ResultActivity : AppCompatActivity() {
     override fun onDestroy() {
         adView?.destroy()
         super.onDestroy()
+    }
+
+    private fun createAdInter() {
+        val enableAdInter = getString(R.string.EnableAdInter) == "true"
+        if (enableAdInter) {
+            interstitialAd = MaxInterstitialAd(getString(R.string.INTER), this)
+            interstitialAd?.let { ad ->
+                ad.setListener(object : MaxAdListener {
+                    override fun onAdLoaded(p0: MaxAd?) {
+                        print("onAdLoaded")
+                        retryAttempt = 0
+                    }
+
+                    override fun onAdDisplayed(p0: MaxAd?) {
+                        print("onAdDisplayed")
+                    }
+
+                    override fun onAdHidden(p0: MaxAd?) {
+                        print("onAdHidden")
+                        // Interstitial Ad is hidden. Pre-load the next ad
+                        interstitialAd?.loadAd()
+                    }
+
+                    override fun onAdClicked(p0: MaxAd?) {
+                        print("onAdClicked")
+                    }
+
+                    override fun onAdLoadFailed(p0: String?, p1: MaxError?) {
+                        print("onAdLoadFailed")
+                        retryAttempt++
+                        val delayMillis =
+                            TimeUnit.SECONDS.toMillis(2.0.pow(min(6, retryAttempt)).toLong())
+
+                        Handler(Looper.getMainLooper()).postDelayed(
+                            {
+                                interstitialAd?.loadAd()
+                            }, delayMillis
+                        )
+                    }
+
+                    override fun onAdDisplayFailed(p0: MaxAd?, p1: MaxError?) {
+                        print("onAdDisplayFailed")
+                        // Interstitial ad failed to display. We recommend loading the next ad.
+                        interstitialAd?.loadAd()
+                    }
+
+                })
+                ad.setRevenueListener {
+                    print("onAdDisplayed")
+                }
+
+                // Load the first ad.
+                ad.loadAd()
+            }
+        }
+    }
+
+    private fun showAd(runnable: Runnable) {
+        val enableAdInter = getString(R.string.EnableAdInter) == "true"
+        if (enableAdInter) {
+            interstitialAd?.let { ad ->
+                if (ad.isReady) {
+                    ad.showAd()
+                    runnable.run()
+                }
+            }
+        }
     }
 
 }

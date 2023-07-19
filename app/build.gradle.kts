@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-
+    namespace = "com.roy"
     compileSdk = 33
 
     defaultConfig {
@@ -29,6 +29,37 @@ android {
     }
     buildTypes.all { isCrunchPngs = false }
 
+    flavorDimensions.add("type")
+
+    productFlavors {
+        create("dev") {
+            setDimension("type")
+            buildConfigField("String", "FLAVOR_buildEnv", "dev")
+
+            resValue ("string", "app_name", "BMI Calculator DEV")
+
+            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
+            resValue("string", "BANNER", "61bbe6bab3d68d82")
+            resValue("string", "INTER", "4396aa8739048c28")
+
+            resValue("string", "EnableAdInter", "false")
+            resValue("string", "EnableAdBanner", "false")
+        }
+        create("production") {
+            setDimension("type")
+            buildConfigField("String", "FLAVOR_buildEnv", "prod")
+
+            resValue ("string", "app_name", "BMI Calculator DEV")
+
+            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
+            resValue("string", "BANNER", "61bbe6bab3d68d82")
+            resValue("string", "INTER", "4396aa8739048c28")
+
+            resValue("string", "EnableAdInter", "true")
+            resValue("string", "EnableAdBanner", "true")
+        }
+    }
+
     compileOptions {
         sourceCompatibility(JavaVersion.VERSION_1_8)
         targetCompatibility(JavaVersion.VERSION_1_8)
@@ -36,9 +67,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    namespace = "com.roy"
     android.buildFeatures.dataBinding = true
-
 }
 
 dependencies {
@@ -50,6 +79,7 @@ dependencies {
     implementation("com.github.psuzn:WheelView:1.0.0")
     implementation("com.github.CNCoderX:WheelView:1.2.6")
     implementation("com.github.mhdmoh:swipe-button:1.0.3")
+    implementation("com.applovin:applovin-sdk:11.10.1")
 
     //for testing
 //    testImplementation("junit:junit:4.13.2")

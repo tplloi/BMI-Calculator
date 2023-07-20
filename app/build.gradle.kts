@@ -49,7 +49,7 @@ android {
             setDimension("type")
 //            buildConfigField("String", "FLAVOR_buildEnv", "prod")
 
-            resValue ("string", "app_name", "BMI Calculator DEV")
+            resValue ("string", "app_name", "BMI Calculator")
 
             resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
             resValue("string", "BANNER", "61bbe6bab3d68d82")

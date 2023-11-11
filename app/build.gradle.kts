@@ -42,8 +42,8 @@ android {
             resValue("string", "BANNER", "61bbe6bab3d68d82")
             resValue("string", "INTER", "4396aa8739048c28")
 
-            resValue("string", "EnableAdInter", "true")
-            resValue("string", "EnableAdBanner", "true")
+            resValue("string", "EnableAdInter", "false")
+            resValue("string", "EnableAdBanner", "false")
         }
         create("production") {
             setDimension("type")
@@ -79,11 +79,11 @@ dependencies {
     implementation("com.github.psuzn:WheelView:1.0.0")
     implementation("com.github.CNCoderX:WheelView:1.2.6")
     implementation("com.github.mhdmoh:swipe-button:1.0.3")
-    implementation("com.applovin:applovin-sdk:11.10.1")
+    implementation("com.applovin:applovin-sdk:11.11.3")
 
     //for testing
 //    testImplementation("junit:junit:4.13.2")
 //    androidTestImplementation("androidx.test.ext:junit:1.1.5")
 //    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.10")
+    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.12")
 }

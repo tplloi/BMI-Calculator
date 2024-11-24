@@ -1,9 +1,8 @@
-package com.roy.ext
+package com.samsunggalaxy.ext
 
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
-import android.util.Log
 import android.util.Log.e
 import android.util.Log.i
 import android.view.ViewGroup
@@ -18,8 +17,8 @@ import com.applovin.mediation.ads.MaxAdView
 import com.applovin.sdk.AppLovinMediationProvider
 import com.applovin.sdk.AppLovinSdk
 import com.applovin.sdk.AppLovinSdkUtils
-import com.roy.BuildConfig
-import com.roy.R
+import com.samsunggalaxy.BuildConfig
+import com.samsunggalaxy.R
 
 fun Context.setupApplovinAd() {
     // Please check config in gradle

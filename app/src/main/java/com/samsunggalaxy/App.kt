@@ -1,4 +1,4 @@
-package com.roy
+package com.samsunggalaxy
 
 import android.app.Application
 import com.google.android.material.color.DynamicColors

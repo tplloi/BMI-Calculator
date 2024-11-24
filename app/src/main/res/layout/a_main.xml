@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/backgroundColorAdditional"
-        tools:context="com.roy.ui.MainActivity">
+        tools:context="com.samsunggalaxy.ui.MainActivity">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llActionBar"

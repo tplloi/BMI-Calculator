@@ -1,13 +1,11 @@
-package com.roy.ext
+package com.samsunggalaxy.ext
 
-import android.app.*
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
-import android.view.*
 
 //check xem app hien tai co phai la default launcher hay khong
 fun Context.isDefaultLauncher(): Boolean {

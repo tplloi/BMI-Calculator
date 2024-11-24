@@ -1,7 +1,6 @@
-package com.roy.utils
+package com.samsunggalaxy.utils
 
 import android.content.Context
-import android.view.View
 import android.widget.Toast
 
 fun Context.displayToast(s: String?) {

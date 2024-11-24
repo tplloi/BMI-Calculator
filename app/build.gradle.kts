@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.roy"
+    namespace = "com.samsunggalaxy"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.roy93group.bmicalculator"
+        applicationId = "com.samsunggalaxy.bmicalculator"
         minSdk = 21
         targetSdk = 34
         versionCode = 20241124
@@ -36,9 +36,13 @@ android {
             setDimension("type")
 //            buildConfigField("String", "FLAVOR_buildEnv", "dev")
 
-            resValue ("string", "app_name", "BMI Calculator DEV")
+            resValue("string", "app_name", "BMI Calculator DEV")
 
-            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
+            resValue(
+                "string",
+                "SDK_KEY",
+                "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt"
+            )
             resValue("string", "BANNER", "61bbe6bab3d68d82")
             resValue("string", "INTER", "4396aa8739048c28")
 
@@ -49,9 +53,13 @@ android {
             setDimension("type")
 //            buildConfigField("String", "FLAVOR_buildEnv", "prod")
 
-            resValue ("string", "app_name", "BMI Calculator")
+            resValue("string", "app_name", "BMI Calculator")
 
-            resValue("string", "SDK_KEY", "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt")
+            resValue(
+                "string",
+                "SDK_KEY",
+                "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt"
+            )
             resValue("string", "BANNER", "61bbe6bab3d68d82")
             resValue("string", "INTER", "4396aa8739048c28")
 
@@ -84,5 +92,5 @@ dependencies {
 //    testImplementation("junit:junit:4.13.2")
 //    androidTestImplementation("androidx.test.ext:junit:1.1.5")
 //    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.14")
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
 }

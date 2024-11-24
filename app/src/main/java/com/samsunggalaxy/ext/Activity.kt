@@ -1,4 +1,4 @@
-package com.roy.ext
+package com.samsunggalaxy.ext
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -17,8 +17,7 @@ import android.provider.AlarmClock
 import android.provider.CalendarContract
 import android.provider.Telephony
 import android.view.*
-import android.widget.Toast
-import com.roy.R
+import com.samsunggalaxy.R
 
 fun isDefaultLauncher(application: Application): Boolean {
     val intent = Intent(Intent.ACTION_MAIN)

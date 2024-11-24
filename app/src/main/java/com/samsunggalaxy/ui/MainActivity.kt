@@ -1,4 +1,4 @@
-package com.roy.ui
+package com.samsunggalaxy.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -15,14 +15,14 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.applovin.mediation.ads.MaxAdView
 import com.cncoderx.wheelview.OnWheelChangedListener
-import com.roy.R
-import com.roy.adt.WeightPickerAdapter
-import com.roy.databinding.AMainBinding
-import com.roy.ext.createAdBanner
-import com.roy.ext.moreApp
-import com.roy.ext.openBrowserPolicy
-import com.roy.ext.rateApp
-import com.roy.ext.shareApp
+import com.samsunggalaxy.R
+import com.samsunggalaxy.adt.WeightPickerAdapter
+import com.samsunggalaxy.databinding.AMainBinding
+import com.samsunggalaxy.ext.createAdBanner
+import com.samsunggalaxy.ext.moreApp
+import com.samsunggalaxy.ext.openBrowserPolicy
+import com.samsunggalaxy.ext.rateApp
+import com.samsunggalaxy.ext.shareApp
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
 class MainActivity : AppCompatActivity() {

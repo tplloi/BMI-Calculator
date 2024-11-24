@@ -1,4 +1,4 @@
-package com.roy.utils
+package com.samsunggalaxy.utils
 
 import android.app.Activity
 import android.content.ContentValues

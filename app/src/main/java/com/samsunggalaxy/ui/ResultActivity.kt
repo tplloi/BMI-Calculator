@@ -1,4 +1,4 @@
-package com.roy.ui
+package com.samsunggalaxy.ui
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -20,11 +20,11 @@ import com.applovin.mediation.MaxAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
 import com.applovin.mediation.ads.MaxInterstitialAd
-import com.roy.R
-import com.roy.databinding.AResultBinding
-import com.roy.ext.createAdBanner
-import com.roy.utils.displayToast
-import com.roy.utils.saveBitmap
+import com.samsunggalaxy.R
+import com.samsunggalaxy.databinding.AResultBinding
+import com.samsunggalaxy.ext.createAdBanner
+import com.samsunggalaxy.utils.displayToast
+import com.samsunggalaxy.utils.saveBitmap
 import java.util.concurrent.TimeUnit
 import kotlin.math.min
 import kotlin.math.pow

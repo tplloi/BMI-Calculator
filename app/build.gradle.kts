@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace = "com.roy"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.roy93group.bmicalculator"
         minSdk = 21
-        targetSdk = 33
-        versionCode = 20230719
-        versionName = "2023.07.19"
+        targetSdk = 34
+        versionCode = 20241124
+        versionName = "2024.11.24"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -80,10 +80,9 @@ dependencies {
     implementation("com.github.CNCoderX:WheelView:1.2.6")
     implementation("com.github.mhdmoh:swipe-button:1.0.3")
     implementation("com.applovin:applovin-sdk:11.11.3")
-
     //for testing
 //    testImplementation("junit:junit:4.13.2")
 //    androidTestImplementation("androidx.test.ext:junit:1.1.5")
 //    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.12")
+    debugImplementation ("com.squareup.leakcanary:leakcanary-android:2.14")
 }

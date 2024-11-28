@@ -5,17 +5,18 @@ import com.google.android.material.color.DynamicColors
 
 //TODO firebase
 //TODO keep value cuoi cung de hien thi len wheel view
+//TODO change color
+//TODO ic launcher
+//TODO rate app
+//TODO more app
+//TODO share app
+//TODO policy
+//TODO leak canary
+//TODO keystore
+//TODO applovin ad
 
-//done
-//ic launcher
-//rate app
-//more app
-//share app
-//policy
+//done mckimquyen
 //ad id manifest
-//leak canary
-//keystore
-//applovin ad
 class App : Application() {
     override fun onCreate() {
         super.onCreate()

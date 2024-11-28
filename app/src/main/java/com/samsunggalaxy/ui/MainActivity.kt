@@ -207,7 +207,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showMenu() {
         val pm = PopupMenu(this, _binding.ivMenu)
-        pm.menuInflater.inflate(R.menu.option_menu, pm.menu)
+        pm.menuInflater.inflate(R.menu.menu_option, pm.menu)
         pm.setOnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.menuRateApp -> {

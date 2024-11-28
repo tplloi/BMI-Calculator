@@ -152,7 +152,6 @@ class MainAct : AppCompatActivity() {
     }
 
     private fun animationView() {
-
         _binding.apply {
 
             bodyContainer.translationY = 150f
@@ -248,7 +247,8 @@ class MainAct : AppCompatActivity() {
             val result = data?.getBooleanExtra(REQUEST_RESULT, false)
             Log.d("roy93~", "result $result")
             if (result == true) {
-
+                animationView()
+                _binding.startButton.alpha = 1f
             }
         }
     }

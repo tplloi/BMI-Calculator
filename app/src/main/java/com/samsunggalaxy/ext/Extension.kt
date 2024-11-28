@@ -1,4 +1,4 @@
-package com.samsunggalaxy.utils
+package com.samsunggalaxy.ext
 
 import android.content.Context
 import android.widget.Toast

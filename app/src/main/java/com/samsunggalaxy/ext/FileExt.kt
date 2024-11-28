@@ -1,4 +1,4 @@
-package com.samsunggalaxy.utils
+package com.samsunggalaxy.ext
 
 import android.app.Activity
 import android.content.ContentValues
@@ -11,7 +11,11 @@ import android.provider.MediaStore
 @JvmField
 val DEFAULT_FILENAME = "BMI Calculator " + System.currentTimeMillis()
 
-fun saveBitmap(activity: Activity, bitmap: Bitmap, filename: String = DEFAULT_FILENAME): Uri? {
+fun saveBitmap(
+    activity: Activity,
+    bitmap: Bitmap,
+    filename: String = DEFAULT_FILENAME,
+): Uri? {
     val contentValues = ContentValues().apply {
         put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
         put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
@@ -31,7 +35,11 @@ fun saveBitmap(activity: Activity, bitmap: Bitmap, filename: String = DEFAULT_FI
     return imageUri.also {
         val fileOutputStream = imageUri?.let { contentResolver.openOutputStream(it) }
         fileOutputStream?.let {
-            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
+            bitmap.compress(
+                /* format = */ Bitmap.CompressFormat.JPEG,
+                /* quality = */ 100,
+                /* stream = */ it
+            )
         }
         fileOutputStream?.close()
     }

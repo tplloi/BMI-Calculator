@@ -23,8 +23,8 @@ import com.applovin.mediation.ads.MaxInterstitialAd
 import com.samsunggalaxy.R
 import com.samsunggalaxy.databinding.AResultBinding
 import com.samsunggalaxy.ext.createAdBanner
-import com.samsunggalaxy.utils.displayToast
-import com.samsunggalaxy.utils.saveBitmap
+import com.samsunggalaxy.ext.displayToast
+import com.samsunggalaxy.ext.saveBitmap
 import java.util.concurrent.TimeUnit
 import kotlin.math.min
 import kotlin.math.pow

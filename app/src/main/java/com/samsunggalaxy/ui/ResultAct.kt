@@ -29,8 +29,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.math.min
 import kotlin.math.pow
 
-class ResultActivity : AppCompatActivity() {
-
+class ResultAct : AppCompatActivity() {
     private lateinit var binding: AResultBinding
     private val _binding get() = binding
     private var adView: MaxAdView? = null
@@ -78,7 +77,7 @@ class ResultActivity : AppCompatActivity() {
             shareImage()
         }
 
-        adView = this@ResultActivity.createAdBanner(
+        adView = this@ResultAct.createAdBanner(
             logTag = javaClass.simpleName,
             bkgColor = Color.TRANSPARENT,
             viewGroup = binding.flAd,
@@ -116,8 +115,10 @@ class ResultActivity : AppCompatActivity() {
     private fun backPreviousPage() {
         animationViewUp()
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+//            startActivity(Intent(this, MainAct::class.java))
+//            overridePendingTransition(0, 0)
             finish()
+            overridePendingTransition(0, 0)
             showAd {}
         }, 600)
     }
@@ -198,9 +199,8 @@ class ResultActivity : AppCompatActivity() {
 
     }
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint("SetTextI18n", "DefaultLocale")
     private fun showResult() {
-
         val solution = String.format("%.1f", result)
         _binding.tvResult.text = solution
         _binding.tvBmi.apply {
@@ -226,6 +226,7 @@ class ResultActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+//        super.onBackPressed()
         backPreviousPage()
     }
 

@@ -22,15 +22,12 @@ fun Context.isDefaultLauncher(): Boolean {
     }
 
     val currentLauncherName = resolveInfo?.activityInfo?.packageName
-    if (currentLauncherName == packageName) {
-        return true
-    }
-    return false
+    return currentLauncherName == packageName
 }
 
 //mo app setting default cua device
 fun Context.launchSystemSetting(
-    packageName: String
+    packageName: String,
 ) {
     val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
     intent.data = Uri.parse("package:$packageName")
@@ -38,12 +35,12 @@ fun Context.launchSystemSetting(
 }
 
 /*
-         * send email support
-         */
+* send email support
+*/
 fun Context?.sendEmail(
 ) {
     val emailIntent = Intent(Intent.ACTION_SENDTO)
-    emailIntent.data = Uri.parse("mailto: www.muathu@gmail.com")
+    emailIntent.data = Uri.parse("mailto: roy.mobile.dev@gmail.com")
     this?.startActivity(Intent.createChooser(emailIntent, "Send feedback"))
 }
 
@@ -56,7 +53,7 @@ fun Context.openBrowserPolicy(
 }
 
 fun Context?.openUrlInBrowser(
-    url: String?
+    url: String?,
 ) {
     if (this == null || url.isNullOrEmpty()) {
         return

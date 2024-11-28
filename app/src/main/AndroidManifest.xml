@@ -25,13 +25,13 @@
         android:theme="@style/AppTheme"
         tools:targetApi="33">
         <activity
-            android:name=".ui.ResultActivity"
+            android:name=".ui.ResultAct"
             android:exported="false" />
         <meta-data
             android:name="applovin.sdk.key"
             android:value="@string/SDK_KEY" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.MainAct"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

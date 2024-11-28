@@ -87,7 +87,7 @@ fun Activity.launchCalendar() {
 
 //go mot app bat ky nao do
 fun Activity.uninstallApp(
-    packageName: String
+    packageName: String,
 ) {
     val intent = Intent(Intent.ACTION_DELETE)
     intent.data = Uri.parse("package:$packageName")
@@ -125,14 +125,14 @@ fun Activity.getScreenOrientation(): Int {
 
 @Suppress("unused")
 fun Activity.setSoftInputMode(
-    mode: Int
+    mode: Int,
 ) {
     this.window.setSoftInputMode(mode)
 }
 
 // https://gist.github.com/mustafasevgi/8c6b638ffd5fca90d45d
 fun Activity?.sendSMS(
-    text: String
+    text: String,
 ) {
     if (this == null) {
         return
@@ -154,7 +154,7 @@ fun Activity?.sendSMS(
 }
 
 fun Activity.rateApp(
-    packageName: String? = null
+    packageName: String? = null,
 ) {
     if (packageName.isNullOrEmpty()) {
         return
@@ -177,7 +177,7 @@ fun Activity.rateApp(
 }
 
 fun Activity.moreApp(
-    nameOfDeveloper: String = "Roy93Group"
+    nameOfDeveloper: String = "Roy93Group",
 ) {
     val uri = "https://play.google.com/store/apps/developer?id=$nameOfDeveloper"
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(uri))
@@ -200,7 +200,7 @@ fun Activity.shareApp(
 }
 
 fun Activity.share(
-    msg: String
+    msg: String,
 ) {
     try {
         val intent = Intent(Intent.ACTION_SEND)
@@ -245,7 +245,7 @@ fun Context.getFacebookPageURL(): String {
 
 // playYoutube(activity, "http://www.youtube.com/watch?v=Hxy8BZGQ5Jo");
 fun Activity.playYoutube(
-    url: String?
+    url: String?,
 ) {
     if (url.isNullOrEmpty()) {
         return
@@ -254,13 +254,13 @@ fun Activity.playYoutube(
 }
 
 fun Activity.playYoutubeWithId(
-    id: String
+    id: String,
 ) {
     this.playYoutube(url = "http://www.youtube.com/watch?v=$id")
 }
 
 fun Activity.setChangeStatusBarTintToDark(
-    shouldChangeStatusBarTintToDark: Boolean
+    shouldChangeStatusBarTintToDark: Boolean,
 ) {
     val decor = this.window.decorView
     if (shouldChangeStatusBarTintToDark) {
@@ -339,7 +339,7 @@ fun Activity.toggleFullscreen(
 }
 
 fun Activity.toggleFullscreen(
-    isFullScreen: Boolean
+    isFullScreen: Boolean,
 ) {
     if (isFullScreen) {
         this.window.decorView.systemUiVisibility =

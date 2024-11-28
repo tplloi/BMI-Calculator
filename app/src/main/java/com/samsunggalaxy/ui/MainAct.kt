@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.SnapHelper
 import com.applovin.mediation.ads.MaxAdView
 import com.cncoderx.wheelview.OnWheelChangedListener
 import com.samsunggalaxy.R
-import com.samsunggalaxy.adt.WeightPickerAdapter
+import com.samsunggalaxy.adt.WeightPickerAdt
 import com.samsunggalaxy.databinding.AMainBinding
 import com.samsunggalaxy.ext.createAdBanner
 import com.samsunggalaxy.ext.moreApp
@@ -25,16 +25,13 @@ import com.samsunggalaxy.ext.rateApp
 import com.samsunggalaxy.ext.shareApp
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 
-class MainActivity : AppCompatActivity() {
-
+class MainAct : AppCompatActivity() {
     private lateinit var binding: AMainBinding
     private val _binding get() = binding
-
-    private lateinit var weightAdapter: WeightPickerAdapter
+    private lateinit var weightAdapter: WeightPickerAdt
     private var gender = 'M'
     var height = 1
     private var weight = 50
-
     private var doubleBackToExitPressedOnce = false
     private var adView: MaxAdView? = null
 
@@ -47,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupViews() {
-        adView = this@MainActivity.createAdBanner(
+        adView = this@MainAct.createAdBanner(
             logTag = javaClass.simpleName,
             bkgColor = Color.TRANSPARENT,
             viewGroup = binding.flAd,
@@ -85,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(_binding.weightRecyclerBtn)
 
-        weightAdapter = WeightPickerAdapter(this, getData(151), _binding.weightRecyclerBtn)
+        weightAdapter = WeightPickerAdt(this, getData(151), _binding.weightRecyclerBtn)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             _binding.weightRecyclerBtn.defaultFocusHighlightEnabled = true
@@ -121,8 +118,7 @@ class MainActivity : AppCompatActivity() {
             animationViewUp()
             _binding.startButton.alpha = 0f
             Handler(Looper.getMainLooper()).postDelayed({
-
-                val intent = Intent(this, ResultActivity::class.java)
+                val intent = Intent(this, ResultAct::class.java)
                 intent.putExtra("Height", height.toDouble())
                 intent.putExtra("Weight", weight.toDouble())
                 if (gender == 'M') {
@@ -131,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("Gender", 1)
                 }
                 startActivity(intent)
-
+                overridePendingTransition(0, 0)
             }, 500)
         }
 
@@ -195,6 +191,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
+//        super.onBackPressed()
         if (doubleBackToExitPressedOnce) {
             onBackPressedDispatcher.onBackPressed()
         }

@@ -14,7 +14,7 @@
         android:animateLayoutChanges="true"
         android:background="@color/backgroundColorAdditional"
         android:orientation="vertical"
-        tools:context="com.samsunggalaxy.ui.ResultActivity">
+        tools:context="com.samsunggalaxy.ui.ResultAct">
 
         <ScrollView
             android:layout_width="match_parent"

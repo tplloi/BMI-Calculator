@@ -9,12 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.samsunggalaxy.R
 
-class WeightPickerAdapter(
+class WeightPickerAdt(
     private val context: Context,
     private var dataList: List<String>,
-    private val recyclerView: RecyclerView
+    private val recyclerView: RecyclerView,
 ) :
-    RecyclerView.Adapter<WeightPickerAdapter.TextVH>() {
+    RecyclerView.Adapter<WeightPickerAdt.TextVH>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TextVH {
         val view: View
@@ -24,7 +24,6 @@ class WeightPickerAdapter(
     }
 
     override fun onBindViewHolder(holder: TextVH, position: Int) {
-
         holder.pickerTxt.text = dataList[position]
         holder.pickerTxt.setOnClickListener {
             recyclerView.smoothScrollToPosition(position)
@@ -42,11 +41,7 @@ class WeightPickerAdapter(
     }
 
     class TextVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var pickerTxt: TextView
-
-        init {
-            pickerTxt = itemView.findViewById(R.id.weight_picker_item)
-        }
+        var pickerTxt: TextView = itemView.findViewById(R.id.weight_picker_item)
     }
 
 }

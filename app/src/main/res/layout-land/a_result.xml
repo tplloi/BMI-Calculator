@@ -9,6 +9,7 @@
         android:id="@+id/llDetailView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
         android:background="@color/backgroundColorAdditional"
         android:gravity="center"
         tools:context="com.samsunggalaxy.ui.ResultActivity">

@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,9 @@ import com.samsunggalaxy.ext.openBrowserPolicy
 import com.samsunggalaxy.ext.rateApp
 import com.samsunggalaxy.ext.shareApp
 import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
+
+const val REQUEST_CODE = 69
+const val REQUEST_RESULT = "REQUEST_RESULT"
 
 class MainAct : AppCompatActivity() {
     private lateinit var binding: AMainBinding
@@ -126,7 +130,7 @@ class MainAct : AppCompatActivity() {
                 } else {
                     intent.putExtra("Gender", 1)
                 }
-                startActivity(intent)
+                startActivityForResult(intent, REQUEST_CODE)
                 overridePendingTransition(0, 0)
             }, 500)
         }
@@ -236,5 +240,16 @@ class MainAct : AppCompatActivity() {
     override fun onDestroy() {
         adView?.destroy()
         super.onDestroy()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == REQUEST_CODE && resultCode == RESULT_OK) {
+            val result = data?.getBooleanExtra(REQUEST_RESULT, false)
+            Log.d("roy93~", "result $result")
+            if (result == true) {
+
+            }
+        }
     }
 }

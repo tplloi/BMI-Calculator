@@ -117,6 +117,9 @@ class ResultAct : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
 //            startActivity(Intent(this, MainAct::class.java))
 //            overridePendingTransition(0, 0)
+            val resultIntent = Intent()
+            resultIntent.putExtra(REQUEST_RESULT, true)
+            setResult(RESULT_OK, resultIntent)
             finish()
             overridePendingTransition(0, 0)
             showAd {}

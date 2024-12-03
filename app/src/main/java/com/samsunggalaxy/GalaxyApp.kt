@@ -6,6 +6,7 @@ import com.google.android.material.color.DynamicColors
 //TODO firebase
 //TODO applovin ad
 
+//TODO scale 1.0
 //TODO keep value cuoi cung de hien thi len wheel view
 //TODO change color
 //TODO ic launcher

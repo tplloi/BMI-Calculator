@@ -15,6 +15,8 @@ import com.google.android.material.color.DynamicColors
 //TODO policy
 //TODO leak canary
 //TODO keystore
+//TODO splash screen
+//TODO 120hz
 
 //done mckimquyen
 //ad id manifest

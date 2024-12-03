@@ -15,7 +15,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llActionBar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="32dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"

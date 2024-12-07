@@ -33,8 +33,8 @@ android {
 
     productFlavors {
         create("dev") {
-            setDimension("type")
-//            buildConfigField("String", "FLAVOR_buildEnv", "dev")
+            dimension = "type"
+            //            buildConfigField("String", "FLAVOR_buildEnv", "dev")
 
             resValue("string", "app_name", "BMI Calculator DEV")
 
@@ -50,8 +50,8 @@ android {
             resValue("string", "EnableAdBanner", "false")
         }
         create("production") {
-            setDimension("type")
-//            buildConfigField("String", "FLAVOR_buildEnv", "prod")
+            dimension = "type"
+            //            buildConfigField("String", "FLAVOR_buildEnv", "prod")
 
             resValue("string", "app_name", "BMI Calculator")
 

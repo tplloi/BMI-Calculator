@@ -15,7 +15,7 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/llActionBar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="32dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -188,7 +188,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -205,10 +205,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingBottom="16dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    android:paddingBottom="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -233,8 +230,9 @@
                 <com.cncoderx.wheelview.WheelView
                     android:id="@+id/heightWheelView"
                     android:layout_width="match_parent"
-                    android:layout_height="165dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     app:layout_constraintTop_toBottomOf="@+id/linearLayout"
                     app:wheelCyclic="true"
                     app:wheelDividerColor="@color/backgroundColorAdditional2"
@@ -245,13 +243,15 @@
                     app:wheelItemWidth="100dp"
                     app:wheelSelectedTextColor="?attr/colorPrimary"
                     app:wheelTextColor="@color/textColor"
-                    app:wheelTextSize="16sp" />
+                    app:wheelTextSize="16sp"
+                    tools:ignore="NestedWeights" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/footerContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="1dp"
+                    android:layout_marginBottom="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/heightWheelView">
@@ -283,7 +283,7 @@
                         app:trail_enabled="false" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

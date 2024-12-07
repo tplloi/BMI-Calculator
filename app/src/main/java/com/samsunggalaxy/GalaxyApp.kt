@@ -6,6 +6,7 @@ import com.google.android.material.color.DynamicColors
 //TODO firebase
 //TODO applovin ad
 
+//TODO scale 1.0
 //TODO roy93~ 120hz
 //TODO roy93~ review in app
 //TODO keep value cuoi cung de hien thi len wheel view
@@ -17,6 +18,8 @@ import com.google.android.material.color.DynamicColors
 //TODO policy
 //TODO leak canary
 //TODO keystore
+//TODO splash screen
+//TODO 120hz
 
 //done mckimquyen
 //ad id manifest

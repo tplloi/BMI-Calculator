@@ -8,8 +8,9 @@ import com.google.android.material.color.DynamicColors
 //TODO keep value cuoi cung de hien thi len wheel view
 
 //TODO roy93~ review in app
-//TODO keystore
 //TODO splash screen
+
+//TODO keystore
 
 //done mckimquyen
 //leak canary

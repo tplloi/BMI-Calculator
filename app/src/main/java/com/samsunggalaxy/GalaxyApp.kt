@@ -8,13 +8,13 @@ import com.google.android.material.color.DynamicColors
 //TODO keep value cuoi cung de hien thi len wheel view
 
 //TODO roy93~ review in app
-//TODO share app
 //TODO policy
 //TODO leak canary
 //TODO keystore
 //TODO splash screen
 
 //done mckimquyen
+//share app
 //rate app
 //more app
 //ic launcher

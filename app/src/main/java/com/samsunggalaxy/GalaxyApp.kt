@@ -5,9 +5,8 @@ import com.google.android.material.color.DynamicColors
 
 //TODO firebase
 //TODO applovin ad
-
 //TODO keep value cuoi cung de hien thi len wheel view
-//TODO change color
+
 //TODO ic launcher
 //TODO rate app
 //TODO roy93~ review in app
@@ -19,6 +18,7 @@ import com.google.android.material.color.DynamicColors
 //TODO splash screen
 
 //done mckimquyen
+//change color
 //ad id manifest
 //scale 1.0
 //120hz

@@ -22,6 +22,7 @@ import com.google.android.material.color.DynamicColors
 
 //done mckimquyen
 //ad id manifest
+
 class GalaxyApp : Application() {
     override fun onCreate() {
         super.onCreate()

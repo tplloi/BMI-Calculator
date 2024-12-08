@@ -11,8 +11,8 @@ android {
         applicationId = "com.samsunggalaxy.bmicalculator"
         minSdk = 21
         targetSdk = 34
-        versionCode = 20241124
-        versionName = "2024.11.24"
+        versionCode = 20241208
+        versionName = "2024.12.08"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -20,6 +20,7 @@ import com.applovin.mediation.MaxAdListener
 import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
 import com.applovin.mediation.ads.MaxInterstitialAd
+import com.samsunggalaxy.BaseActivity
 import com.samsunggalaxy.R
 import com.samsunggalaxy.databinding.AResultBinding
 import com.samsunggalaxy.ext.createAdBanner
@@ -29,7 +30,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.math.min
 import kotlin.math.pow
 
-class ResultAct : AppCompatActivity() {
+class ResultAct : BaseActivity() {
     private lateinit var binding: AResultBinding
     private val _binding get() = binding
     private var adView: MaxAdView? = null

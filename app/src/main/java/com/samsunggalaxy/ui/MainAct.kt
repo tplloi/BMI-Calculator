@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.SnapHelper
 import com.applovin.mediation.ads.MaxAdView
 import com.cncoderx.wheelview.OnWheelChangedListener
+import com.samsunggalaxy.BaseActivity
 import com.samsunggalaxy.R
 import com.samsunggalaxy.adt.WeightPickerAdt
 import com.samsunggalaxy.databinding.AMainBinding
@@ -29,7 +30,7 @@ import travel.ithaka.android.horizontalpickerlib.PickerLayoutManager
 const val REQUEST_CODE = 69
 const val REQUEST_RESULT = "REQUEST_RESULT"
 
-class MainAct : AppCompatActivity() {
+class MainAct : BaseActivity() {
     private lateinit var binding: AMainBinding
     private val _binding get() = binding
     private lateinit var weightAdapter: WeightPickerAdt

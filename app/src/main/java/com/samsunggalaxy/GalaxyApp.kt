@@ -10,9 +10,8 @@ import com.google.android.material.color.DynamicColors
 //TODO roy93~ review in app
 //TODO splash screen
 
-//TODO keystore
-
 //done mckimquyen
+//keystore
 //leak canary
 //policy
 //share app

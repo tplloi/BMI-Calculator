@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/menuRateApp"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="@string/rate_app" />
     <item
         android:id="@+id/menuMoreApp"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="@string/get_more_apps" />
     <item
         android:id="@+id/menuShareApp"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="@string/share_this_app" />
     <item
         android:id="@+id/menuPolicy"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@mipmap/ic_launcher_round"
         android:title="@string/privacy_policy" />
 </menu>

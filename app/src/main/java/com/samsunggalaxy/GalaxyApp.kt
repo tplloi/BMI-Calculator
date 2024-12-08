@@ -7,7 +7,6 @@ import com.google.android.material.color.DynamicColors
 //TODO applovin ad
 //TODO keep value cuoi cung de hien thi len wheel view
 
-//TODO ic launcher
 //TODO rate app
 //TODO roy93~ review in app
 //TODO more app
@@ -18,6 +17,7 @@ import com.google.android.material.color.DynamicColors
 //TODO splash screen
 
 //done mckimquyen
+//ic launcher
 //change color
 //ad id manifest
 //scale 1.0

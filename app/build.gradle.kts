@@ -54,8 +54,8 @@ android {
                 "SDK_KEY",
                 "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt"
             )
-            resValue("string", "BANNER", "61bbe6bab3d68d82")
-            resValue("string", "INTER", "4396aa8739048c28")
+            resValue("string", "BANNER", "-")
+            resValue("string", "INTER", "-")
 
             resValue("string", "EnableAdInter", "false")
             resValue("string", "EnableAdBanner", "false")
@@ -71,8 +71,8 @@ android {
                 "SDK_KEY",
                 "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt"
             )
-            resValue("string", "BANNER", "61bbe6bab3d68d82")
-            resValue("string", "INTER", "4396aa8739048c28")
+            resValue("string", "BANNER", "-")
+            resValue("string", "INTER", "-")
 
             resValue("string", "EnableAdInter", "true")
             resValue("string", "EnableAdBanner", "true")

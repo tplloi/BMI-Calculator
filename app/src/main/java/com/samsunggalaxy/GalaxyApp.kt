@@ -7,10 +7,10 @@ import com.google.android.material.color.DynamicColors
 //TODO applovin ad
 //TODO keep value cuoi cung de hien thi len wheel view
 
-//TODO roy93~ review in app
 //TODO splash screen
 
 //done mckimquyen
+//review in app
 //keystore
 //leak canary
 //policy

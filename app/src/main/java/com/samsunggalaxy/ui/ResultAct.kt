@@ -21,11 +21,13 @@ import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
 import com.applovin.mediation.ads.MaxInterstitialAd
 import com.samsunggalaxy.BaseActivity
+import com.samsunggalaxy.BuildConfig
 import com.samsunggalaxy.R
 import com.samsunggalaxy.databinding.AResultBinding
 import com.samsunggalaxy.ext.createAdBanner
 import com.samsunggalaxy.ext.displayToast
 import com.samsunggalaxy.ext.saveBitmap
+import com.samsunggalaxy.rateAppInApp
 import java.util.concurrent.TimeUnit
 import kotlin.math.min
 import kotlin.math.pow
@@ -56,6 +58,11 @@ class ResultAct : BaseActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.a_result)
 
         setupViews()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        rateAppInApp(BuildConfig.DEBUG)
     }
 
     private fun setupViews() {

@@ -9,7 +9,7 @@ import com.google.android.material.color.DynamicColors
 //TODO splash screen
 
 //done mckimquyen
-//review in app
+//review in app bingo
 //keystore
 //leak canary
 //policy

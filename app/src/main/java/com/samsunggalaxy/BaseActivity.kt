@@ -4,9 +4,12 @@ import android.app.Activity
 import android.content.Context
 import android.content.res.Configuration
 import android.os.Build
+import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.Display
 import android.view.WindowManager
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.play.core.review.ReviewInfo
 import com.google.android.play.core.review.ReviewManagerFactory
@@ -15,6 +18,10 @@ import kotlin.apply
 import kotlin.collections.maxByOrNull
 
 open class BaseActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+    }
 
     override fun attachBaseContext(context: Context) {
         val override = Configuration(context.resources.configuration)

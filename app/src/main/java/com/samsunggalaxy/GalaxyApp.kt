@@ -4,10 +4,10 @@ import android.app.Application
 import com.google.android.material.color.DynamicColors
 
 //TODO firebase
-//TODO applovin ad
 //TODO keep value cuoi cung de hien thi len wheel view
 
 //done mckimquyen
+//applovin ad
 //splash screen
 //review in app bingo
 //keystore

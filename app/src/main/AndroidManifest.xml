@@ -39,9 +39,6 @@
             android:name=".ui.ResultAct"
             android:exported="false" />
 
-        <meta-data
-            android:name="applovin.sdk.key"
-            android:value="@string/SDK_KEY" />
         <activity
             android:name=".ui.MainAct"
             android:exported="true">

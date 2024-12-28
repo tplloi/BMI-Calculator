@@ -55,11 +55,11 @@ android {
                 "SDK_KEY",
                 "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt"
             )
-            resValue("string", "BANNER", "-")
-            resValue("string", "INTER", "-")
+            resValue("string", "BANNER", "935687e95c2be5f5")
+            resValue("string", "INTER", "e080595a143cf78e")
 
-            resValue("string", "EnableAdInter", "false")
-            resValue("string", "EnableAdBanner", "false")
+            resValue("string", "EnableAdInter", "true")
+            resValue("string", "EnableAdBanner", "true")
         }
         create("production") {
             dimension = "type"
@@ -72,8 +72,8 @@ android {
                 "SDK_KEY",
                 "e75FnQfS9XTTqM1Kne69U7PW_MBgAnGQTFvtwVVui6kRPKs5L7ws9twr5IQWwVfzPKZ5pF2IfDa7lguMgGlCyt"
             )
-            resValue("string", "BANNER", "-")
-            resValue("string", "INTER", "-")
+            resValue("string", "BANNER", "935687e95c2be5f5")
+            resValue("string", "INTER", "e080595a143cf78e")
 
             resValue("string", "EnableAdInter", "true")
             resValue("string", "EnableAdBanner", "true")

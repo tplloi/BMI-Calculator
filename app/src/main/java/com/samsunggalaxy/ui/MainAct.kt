@@ -1,7 +1,7 @@
 package com.samsunggalaxy.ui
 
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
@@ -9,7 +9,6 @@ import android.os.Looper
 import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearSnapHelper
@@ -21,6 +20,7 @@ import com.samsunggalaxy.R
 import com.samsunggalaxy.adt.WeightPickerAdt
 import com.samsunggalaxy.databinding.AMainBinding
 import com.samsunggalaxy.ext.createAdBanner
+import com.samsunggalaxy.ext.destroyAdBanner
 import com.samsunggalaxy.ext.moreApp
 import com.samsunggalaxy.ext.openBrowserPolicy
 import com.samsunggalaxy.ext.rateApp
@@ -49,13 +49,6 @@ class MainAct : BaseActivity() {
     }
 
     private fun setupViews() {
-        adView = this@MainAct.createAdBanner(
-            logTag = javaClass.simpleName,
-            bkgColor = Color.TRANSPARENT,
-            viewGroup = binding.flAd,
-            isAdaptiveBanner = true,
-        )
-
         //        Gender
         val titlesOfGender: List<String> = listOf("F", "O", "M")
 
@@ -82,7 +75,6 @@ class MainAct : BaseActivity() {
             isSmoothScrollbarEnabled = true
             scrollToPosition(49)
         }
-
 
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(_binding.weightRecyclerBtn)
@@ -142,6 +134,12 @@ class MainAct : BaseActivity() {
         _binding.ivMenu.setOnClickListener {
             showMenu()
         }
+
+        adView = this.createAdBanner(
+            logTag = MainAct::class.simpleName,
+            viewGroup = binding.flAd,
+            isAdaptiveBanner = true,
+        )
     }
 
     private fun getData(count: Int): List<String> {
@@ -194,6 +192,7 @@ class MainAct : BaseActivity() {
         }
     }
 
+    @SuppressLint("MissingSuperCall")
     override fun onBackPressed() {
 //        super.onBackPressed()
         if (doubleBackToExitPressedOnce) {
@@ -238,7 +237,7 @@ class MainAct : BaseActivity() {
     }
 
     override fun onDestroy() {
-        adView?.destroy()
+        binding.flAd?.destroyAdBanner(adView)
         super.onDestroy()
     }
 

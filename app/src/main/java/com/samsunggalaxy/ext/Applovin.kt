@@ -16,27 +16,45 @@ import com.applovin.mediation.MaxError
 import com.applovin.mediation.ads.MaxAdView
 import com.applovin.sdk.AppLovinMediationProvider
 import com.applovin.sdk.AppLovinSdk
+import com.applovin.sdk.AppLovinSdkInitializationConfiguration
 import com.applovin.sdk.AppLovinSdkUtils
+import com.google.android.gms.ads.identifier.AdvertisingIdClient
 import com.samsunggalaxy.BuildConfig
 import com.samsunggalaxy.R
+import java.util.Collections
+import java.util.concurrent.Executors
+
+//for java, check pj hex viewer
+//for compose, check pj...
 
 fun Context.setupApplovinAd() {
     // Please check config in gradle
-    // Please add key in manifest
 
-    // Initialize the AppLovin SDK
-    AppLovinSdk.getInstance(this).mediationProvider = AppLovinMediationProvider.MAX
-//        showMediationDebugger(c)
-    AppLovinSdk.getInstance(this).initializeSdk {
-        // AppLovin SDK is initialized, start loading ads now or later if ad gate is reached
-        e("Applovin", "setupAd initializeSdk $it")
+    val executor = Executors.newSingleThreadExecutor()
+    executor.execute {
+        val initConfigBuilder = AppLovinSdkInitializationConfiguration.builder(getString(R.string.SDK_KEY), this)
+        initConfigBuilder.mediationProvider = AppLovinMediationProvider.MAX
+        // Enable test mode by default for the current device. Cannot be run on the main thread.
         if (BuildConfig.DEBUG) {
-            Toast.makeText(
-                /* context = */ this,
-                /* text = */ "Debug toast initializeSdk isTestModeEnabled: ${it.isTestModeEnabled}",
-                /* duration = */ Toast.LENGTH_LONG
-            ).show()
+            val currentGaid = AdvertisingIdClient.getAdvertisingIdInfo(this).id
+            if (currentGaid != null) {
+                initConfigBuilder.testDeviceAdvertisingIds = Collections.singletonList(currentGaid)
+            }
         }
+        // Initialize the AppLovin SDK
+        val sdk = AppLovinSdk.getInstance(this)
+        sdk.initialize(initConfigBuilder.build()) {
+            // AppLovin SDK is initialized, start loading ads now or later if ad gate is reached
+            e("Applovin", "setupAd initializeSdk $it")
+            if (BuildConfig.DEBUG) {
+                Toast.makeText(
+                    /* context = */ this,
+                    /* text = */ "Debug toast initializeSdk isTestModeEnabled: ${it.isTestModeEnabled}",
+                    /* duration = */ Toast.LENGTH_LONG
+                ).show()
+            }
+        }
+        executor.shutdown()
     }
 }
 
@@ -54,18 +72,21 @@ fun Context.showMediationDebuggerApplovin() {
 
 fun Activity.createAdBanner(
     logTag: String?,
-    bkgColor: Int = Color.RED,
+    bkgColor: Int = Color.TRANSPARENT,
     viewGroup: ViewGroup?,
     isAdaptiveBanner: Boolean,
-): MaxAdView {
+): MaxAdView? {
+    if(viewGroup == null){
+        return null
+    }
     val log = "$logTag - createAdBanner"
     val enableAdBanner = this.getString(R.string.EnableAdBanner) == "true"
     var id = "1234567890123456" // dummy id
     if (enableAdBanner) {
         id = this.getString(R.string.BANNER)
-        viewGroup?.isVisible = true
+//        viewGroup?.isVisible = true
     } else {
-        viewGroup?.isVisible = false
+//        viewGroup?.isVisible = false
     }
     i(log, "enableAdBanner $enableAdBanner -> $id")
     val adView = MaxAdView(id, this)
@@ -73,7 +94,7 @@ fun Activity.createAdBanner(
         ad.setListener(object : MaxAdViewAdListener {
             override fun onAdLoaded(p0: MaxAd) {
                 i(log, "onAdLoaded")
-                viewGroup?.isVisible = true
+//                viewGroup?.isVisible = true
             }
 
             override fun onAdDisplayed(p0: MaxAd) {
@@ -132,9 +153,19 @@ fun Activity.createAdBanner(
             )
         }
 
-        ad.setBackgroundColor(bkgColor)
+
+        if (enableAdBanner) {
+            ad.setBackgroundColor(bkgColor)
+        } else {
+            ad.setBackgroundColor(Color.TRANSPARENT)
+        }
         viewGroup?.addView(adView)
         ad.loadAd()
     }
     return adView
+}
+
+fun ViewGroup.destroyAdBanner(adView: MaxAdView?) {
+    adView?.destroy()
+    this.removeAllViews()
 }

@@ -12,8 +12,8 @@ android {
         minSdk = 21
         //noinspection EditedTargetSdkVersion
         targetSdk = 35
-        versionCode = 20241221
-        versionName = "2024.12.21"
+        versionCode = 20241228
+        versionName = "2024.12.28"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -48,7 +48,7 @@ android {
             dimension = "type"
             //            buildConfigField("String", "FLAVOR_buildEnv", "dev")
 
-            resValue("string", "app_name", "BMI Calculator DEV")
+            resValue("string", "app_name", "BMI Calculator 2025 DEV")
 
             resValue(
                 "string",
@@ -65,7 +65,7 @@ android {
             dimension = "type"
             //            buildConfigField("String", "FLAVOR_buildEnv", "prod")
 
-            resValue("string", "app_name", "BMI Calculator")
+            resValue("string", "app_name", "BMI Calculator 2025")
 
             resValue(
                 "string",

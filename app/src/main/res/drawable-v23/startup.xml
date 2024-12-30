@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@color/material_dynamic_primary30" />
@@ -11,6 +12,8 @@
     </item>
 
     <item
+        android:width="220sp"
+        android:height="220sp"
         android:drawable="@drawable/ic_launcher_circle"
         android:gravity="center" />
 </layer-list>
